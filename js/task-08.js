@@ -23,19 +23,25 @@
 // // Выведи обьект с введенными данными в консоль и очисти
 //  значения полей формы методом reset.
 
-const form = document.querySelector('.Login-form');
-form.addEventListener('submit', handleSubmit);
 
-function handleSubmit(event){
-    event.prevent();
-  const {
-    elements: {login, password}
-  } = event.currentTarget; 
 
-  if(login.value ==="" || password.value === "") {
-    return alert("Please fill in all the fields");
-  }
-  console.log(`Login: ${login.value}, 
-  Password: ${password.value}`);
-  event.currentTarget.reset();
+
+
+const form = document.querySelector('.login-form')
+
+form.addEventListener('submit', handleSubmit)
+
+function handleSubmit(event) {
+    event.preventDefault()
+    const {
+        elements: { email, password },
+    } = event.currentTarget
+
+    if (email.value === '' || password.value === '') {
+        return alert('Please fill in all the fields!')
+    }
+    const userDetails = { email: email.value, Password: password.value }
+    
+    console.log(userDetails)
+    event.currentTarget.reset()
 }

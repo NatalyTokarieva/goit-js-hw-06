@@ -30,26 +30,26 @@ function getRandomHexColor() {
 // Создай функцию destroyBoxes(), которая очищает содержимое
 //  div#boxes, тем самым удаляя все созданные элементы.
 
-refs = {
-  controls: document.querySelector('#controls'),
-  boxes: document.querySelector('#boxes'),
-  input: document.querySelector('number'),
-  createButton: document.querySelector("[data-create]"),
-  destroyButton: document.querySelector("[data-destroy]")
-};
 
+  const controls = document.querySelector('#controls');
+ const boxes = document.querySelector('#boxes');
 
-createButton.addEventListener('click',createBoxes);
-destroyButton.addEventListener('click',destroyBoxes);
-backgroundColor.textontent = controls.style.backgroundColor
-
+  const createButton = document.querySelector("[data-create]");
+  const destroyButton = document.querySelector("[data-destroy]");
 
 const createBoxes = (amount) => {
-
+   let box = document.createElement('div');
+   if(amount === 1) {
+    box.classList.add('box');
+    box.style.width = '(30 + 10)px';
+    box.style.height = '(30 + 10)px';
+    box.style.backgroundColor = getRandomHexColor();
+   }
 
 }
-
-
 const destroyBoxes = () => {
-  refs.boxes.innerHTML = '';
+  boxes.innerHTML = '';
 }
+
+
+// пока не получается:), еще буду пробовать

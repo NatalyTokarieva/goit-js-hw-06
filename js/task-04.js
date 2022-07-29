@@ -16,7 +16,7 @@ const increment = () => {
 };
 
 const decrement = () =>{
-    counter -= 1;
+    counterValue -= 1;
     document.getElementById('value').textContent = counterValue;
 };
 value_button.add.addEventListener('click', increment);
